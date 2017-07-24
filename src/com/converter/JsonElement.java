@@ -4,11 +4,11 @@ abstract class JsonElement
 {
     abstract String toJson(int offset);
 
-    protected String addChars(char c, int n)
+    String addTabs(int n)
     {
-        String chars = "";
+        StringBuilder chars = new StringBuilder();
         for (int i = 0; i < n; ++i)
-            chars += c;
-        return chars;
+            chars.append('\t');
+        return chars.toString();
     }
 }

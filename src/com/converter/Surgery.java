@@ -14,8 +14,6 @@ public class Surgery extends JsonElement
     private String[] specific;
     private String story;
 
-    private String json;
-
     //<editor-fold desc="Getters and setters">
 
     public int getId() {
@@ -115,20 +113,20 @@ public class Surgery extends JsonElement
     {
         int i = 1;
 
-        json = "";
-        json += addChars('\t', offset) + "{\n";
-        json += addChars('\t', offset+1) + "\"id\": " + id + ",\n";
-        json += addChars('\t', offset+1) + "\"nom\": \"" + name + "\",\n";
-        json += addChars('\t', offset+1) + "\"materiels\": [ " + materials + " ],\n";
-        json += addChars('\t', offset+1) + "\"reponses\": [\n";
+        String json = "";
+        json += addTabs(offset) + "{\n";
+        json += addTabs(offset+1) + "\"id\": " + id + ",\n";
+        json += addTabs(offset+1) + "\"nom\": \"" + name + "\",\n";
+        json += addTabs(offset+1) + "\"materiels\": [ " + materials + " ],\n";
+        json += addTabs(offset+1) + "\"reponses\": [\n";
         for (Map.Entry<String, String> response : responses.entrySet())
         {
-            json += addChars('\t', offset+3) + "{ \"" + response.getKey() + "\": \"" + response.getValue() + "\" }" + (responses.size() == i ? "\n" : ",\n");
+            json += addTabs(offset+3) + "{ \"" + response.getKey() + "\": \"" + response.getValue() + "\" }" + (responses.size() == i ? "\n" : ",\n");
             ++i;
         }
-        json += addChars('\t', offset+2) + "],\n";
-        json += addChars('\t', offset+1) + "\"compatibles\": [" + compatibles + "],\n";
-        json += addChars('\t', offset+1) + "\"spec\": [";
+        json += addTabs(offset+2) + "],\n";
+        json += addTabs(offset+1) + "\"compatibles\": [" + compatibles + "],\n";
+        json += addTabs(offset+1) + "\"spec\": [";
         if (specific != null)
         {
             i = 1;
@@ -139,8 +137,8 @@ public class Surgery extends JsonElement
             }
         }
         json += "],\n";
-        json += addChars('\t', offset+1) + "\"histoire\": \"" + story + "\"\n";
-        json += addChars('\t', offset) + "}";
+        json += addTabs(offset+1) + "\"histoire\": \"" + story + "\"\n";
+        json += addTabs(offset) + "}";
         return json;
     }
 }
