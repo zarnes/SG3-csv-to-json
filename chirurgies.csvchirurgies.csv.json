@@ -1,0 +1,28 @@
+{
+	"chirurgies": [
+
+		{
+			"id": 1,
+			"nom": "césarienne",
+			"materiels": [ 1, 2, 3 ],
+			"reponses": [
+					{ "cote": "coté gauche}" },
+					{ "lombaires": "non ca va" }
+				],
+			"compatibles": [1, 2],
+			"spec": [],
+			"histoire": "pwet"
+		},
+
+		{
+			"id": 2,
+			"nom": "truc bidule",
+			"materiels": [ 4, 5, 6 ],
+			"reponses": [
+				],
+			"compatibles": [3],
+			"spec": [ "urgence", "test" ],
+			"histoire": "pwet"
+		}
+	]
+}
