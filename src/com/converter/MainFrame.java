@@ -5,9 +5,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.HashSet;
 
 class MainFrame extends JFrame {
+
     private enum ButtonType
     {
         surgeries,
@@ -16,15 +17,13 @@ class MainFrame extends JFrame {
         questions
     }
 
-    private String encoding;
-
-    private HashMap<String, JComponent> ui;
+    private String encoding = "UTF-8";
+    static JTextArea log;
+    static int currentLine;
 
     MainFrame()
     {
         // General setup
-        ui = new HashMap<>();
-        setLayout(new GridBagLayout());
         setSize(400, 300);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -35,52 +34,58 @@ class MainFrame extends JFrame {
         ButtonGroup group = new ButtonGroup();
 
         JRadioButtonMenuItem button = new JRadioButtonMenuItem("UTF-8");
-        button.addActionListener(e -> encoding = "UTF-8");
+        button.doClick();
+        button.addActionListener(e -> {
+            encoding = "UTF-8";
+            log.append("Encodage des csv configuré en UTF-8");
+        });
         group.add(button);
         menu.add(button);
 
         button = new JRadioButtonMenuItem("Win-1252");
         group.add(button);
         menu.add(button);
-        button.addActionListener(e -> encoding = "Windows-1252");
+        button.addActionListener(e -> {
+            encoding = "Windows-1252";
+            log.append("Encodage des csv configuré en Windows-1252");
+        });
 
         button = new JRadioButtonMenuItem("MacRoman");
         group.add(button);
         menu.add(button);
-        button.addActionListener(e -> encoding = "MacRoman");
+        button.addActionListener(e -> {
+            encoding = "MacRoman";
+            log.append("Encodage des csv configuré en MacRoman");
+        });
 
         bar.add(menu);
+        setJMenuBar(bar);
 
         //</editor-fold>
 
         //<editor-fold desc="Elements creation and their constraints">
 
+        setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
 
-        c.weightx = 1;
-        c.gridx = 0;
-        c.gridy = 0;
-        c.gridwidth = 4;
-        add(bar, c);
-
         c.weightx = 0.25;
-        c.gridy = 1;
+        c.gridy = 0;
         c.gridwidth = 1;
-        ui.put("surgeries", new JButton("Chirurgies"));
-        add(ui.get("surgeries"), c);
+        JButton surgeries = new JButton("Chirurgies");
+        add(surgeries, c);
 
         c.gridx = 1;
-        ui.put("patients", new JButton("Patients"));
-        add(ui.get("patients"), c);
+        JButton patients = new JButton("Patients");
+        add(patients, c);
 
         c.gridx = 2;
-        ui.put("materials", new JButton("Materiel"));
-        add(ui.get("materials"), c);
+        JButton materials = new JButton("Materiels");
+        add(materials, c);
 
         c.gridx = 3;
-        ui.put("questions", new JButton("Questions"));
-        add(ui.get("questions"), c);
+        JButton questions = new JButton("Questions");
+        add(questions, c);
 
         c.weightx = 0;
         c.weighty = 2;
@@ -90,41 +95,34 @@ class MainFrame extends JFrame {
         c.ipady = 0;
         c.fill = GridBagConstraints.BOTH;
 
-        JTextArea logger = new JTextArea();
-        logger.setEditable(false);
-        JScrollPane scroll =  new JScrollPane(logger);
+        log = new JTextArea();
+        log.setEditable(false);
+        JScrollPane scroll = new JScrollPane(log);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        ui.put("logger", logger);
-        ui.put("scroll", scroll);
         add(scroll, c);
+
         //</editor-fold>
 
         //<editor-fold desc="Button events listeners attribution">
 
-        JButton buttonBar = (JButton) ui.get("surgeries");
-        buttonBar.addActionListener(e -> LoadCsv(ButtonType.surgeries));
+        surgeries.addActionListener(e -> LoadCsv(ButtonType.surgeries));
 
-        buttonBar = (JButton) ui.get("patients");
-        buttonBar.addActionListener(e -> LoadCsv(ButtonType.patients));
+        patients.addActionListener(e -> LoadCsv(ButtonType.patients));
 
-        buttonBar = (JButton) ui.get("materials");
-        buttonBar.addActionListener(e -> LoadCsv(ButtonType.materials));
+        materials.addActionListener(e -> LoadCsv(ButtonType.materials));
 
-        buttonBar = (JButton) ui.get("questions");
-        buttonBar.addActionListener(e -> LoadCsv(ButtonType.questions));
+        questions.addActionListener(e -> LoadCsv(ButtonType.questions));
 
         //</editor-fold>
 
         this.setVisible(true);
-        System.out.println("frame ready");
     }
 
     private boolean LoadCsv(ButtonType button)
     {
+        // TODO mieux verboser les log
         File file;
-        JTextArea log = (JTextArea) ui.get("logger");
-
         JFileChooser fc = new JFileChooser();
         int returnVal = fc.showOpenDialog(this);
 
@@ -137,13 +135,18 @@ class MainFrame extends JFrame {
             CSVReader reader = new CSVReader(new InputStreamReader(new FileInputStream(file), encoding), ';', '"', 1);
 
             ArrayList<JsonElement> elements = new ArrayList<>();
+            HashSet<String> hashID = new HashSet<>();
+            HashSet<String> hashID2 = new HashSet<>();
             String[] CSVline;
+            StringBuilder jsonOutput = new StringBuilder("{\n");
+            currentLine = 2;
 
+            // Switch loops fetch data from csv files
             switch (button) {
                 case surgeries:
                     while ((CSVline = reader.readNext()) != null) {
                         Surgery surgery = new Surgery();
-                        surgery.setId(Integer.parseInt(CSVline[0]));
+                        surgery.setId(CSVline[0].equals("") ? null : Integer.parseInt(CSVline[0]));
                         surgery.setName(CSVline[1]);
                         surgery.setMaterials(CSVline[2]);
                         surgery.setResponses(CSVline[3]);
@@ -151,24 +154,91 @@ class MainFrame extends JFrame {
                         surgery.setSpecific(CSVline[5]);
                         surgery.setStory(CSVline[6]);
                         elements.add(surgery);
+//TODO a toast
+                        hashID.add(CSVline[0]);
+                        if (hashID.size() < elements.size())
+                            throw new JsonElementException("L'identifiant " + CSVline[0] + " existe déjà");
+
+                        hashID2.add(CSVline[1]);
+                        if (hashID2.size() < elements.size())
+                            throw new JsonElementException("La chirurgie " + CSVline[1] + " existe déjà");
+
+                        ++currentLine;
                     }
+                    jsonOutput.append("\t\"chirurgies\": [\n\n");
                     break;
 
                 case patients:
-                    return true;
+                    while ((CSVline = reader.readNext()) != null) {
+                        Patient patient = new Patient();
+                        patient.setId(CSVline[0].equals("") ? null : Integer.parseInt(CSVline[0]));
+                        patient.setName(CSVline[1]);
+                        patient.setFirstname(CSVline[2]);
+                        patient.setSex(CSVline[3]);
+                        patient.setAge((CSVline[0].equals("") ? null : Integer.parseInt(CSVline[4])));
+                        patient.setHeight(CSVline[0].equals("") ? null : Integer.parseInt(CSVline[5]));
+                        patient.setWeight(CSVline[0].equals("") ? null : Integer.parseInt(CSVline[6]));
+                        patient.setMaterials(CSVline[7]);
+                        patient.setResponses(CSVline[8]);
+                        patient.setSpecific(CSVline[9]);
+                        elements.add(patient);
+
+                        hashID.add(CSVline[0]);
+                        if (hashID.size() < elements.size())
+                            throw new JsonElementException("L'identifiant " + CSVline[0] + " existe déjà");
+
+                        ++currentLine;
+                    }
+                    jsonOutput.append("\t\"materiels\": [\n\n");
+                    break;
 
                 case materials:
-                    return true;
+                    while ((CSVline = reader.readNext()) != null) {
+                        Material material = new Material();
+                        material.setId(CSVline[0].equals("") ? null : Integer.parseInt(CSVline[0]));
+                        material.setMaterial(CSVline[1]);
+                        material.setCategory(CSVline[2]);
+                        elements.add(material);
+
+                        hashID.add(CSVline[0]);
+                        if (hashID.size() < elements.size())
+                            throw new JsonElementException("L'identifiant " + CSVline[0] + " existe déjà");
+
+                        hashID2.add(CSVline[1]);
+                        if (hashID2.size() < elements.size())
+                            throw new JsonElementException("Le matériel " + CSVline[1] + " existe déjà");
+
+                        ++currentLine;
+                    }
+                    jsonOutput.append("\t\"materiels\": [\n\n");
+                    break;
 
                 case questions:
-                    return true;
+                    while ((CSVline = reader.readNext()) != null) {
+                        Question question = new Question();
+                        question.setId(CSVline[0]);
+                        question.setQuestion(CSVline[1]);
+                        question.setResponse(CSVline[2]);
+                        elements.add(question);
+
+                        hashID.add(CSVline[0]);
+                        if (hashID.size() < elements.size())
+                            throw new JsonElementException("L'identifiant " + CSVline[0] + " existe déjà");
+
+                        hashID2.add(CSVline[1]);
+                        if (hashID2.size() < elements.size())
+                            throw new JsonElementException("La question " + CSVline[1] + " existe déjà");
+
+                        ++currentLine;
+                    }
+                    jsonOutput.append("\t\"questions\": [\n\n");
+                    break;
 
                 default:
                     return false;
             }
 
-            StringBuilder jsonOutput = new StringBuilder("{\n");
-            jsonOutput.append("\t\"chirurgies\": [\n\n");
+            // Build the json
             for (int i = 0; i < elements.size(); ++i)
             {
                 jsonOutput.append(elements.get(i).toJson(2));
@@ -178,16 +248,15 @@ class MainFrame extends JFrame {
                     jsonOutput.append("\n");
             }
             jsonOutput.append("\t]\n}");
-            log.append(jsonOutput.toString());
 
-            PrintWriter writer = new PrintWriter(file.getAbsolutePath() + file.getName() + ".json", "UTF-8");
+            PrintWriter writer = new PrintWriter(file.getParent() + "/" + file.getName().split("csv")[0] + "json", "UTF-8");
             writer.print(jsonOutput);
             writer.close();
-            log.append("\nJson created\n");
+            log.append("Fichier Json crée\n");
 
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        } catch (JsonElementException e) {}
         return false;
     }
 }

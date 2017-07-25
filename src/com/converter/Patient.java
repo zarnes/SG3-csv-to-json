@@ -1,27 +1,30 @@
 package com.converter;
 
-
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Surgery extends JsonElement
+public class Patient extends JsonElement
 {
     private int id;
     private String name;
+    private String firstname;
+    private String sex;
+    private int age;
+    private int height;
+    private int weight;
     private String materials;
     private HashMap<String, String> responses;
-    private String compatibles;
     private String[] specific;
-    private String story;
 
     //<editor-fold desc="Getters and setters">
 
-    public void setId(Integer id) throws JsonElementException {
+    public void setId(Integer id) throws JsonElementException
+    {
         if (id == null)
-            throw new JsonElementException("Identifiant non renseigné");
+            throw new JsonElementException( "Identifiant non renseigné");
         if (id < 0)
             throw new JsonElementException("Identifiant non valide (" + id + ")");
-
         this.id = id;
     }
 
@@ -30,6 +33,50 @@ public class Surgery extends JsonElement
             throw new JsonElementException("Nom non renseigné");
 
         this.name = name;
+    }
+
+    void setFirstname(String firstname) throws JsonElementException {
+        if (firstname.equals(""))
+            throw new JsonElementException("Prénom non renseigné");
+
+        this.firstname = firstname;
+    }
+
+    void setSex(String sex) throws JsonElementException {
+        if (sex.equals(""))
+            throw new JsonElementException("Sexe non renseigné");
+
+        if (sex.equals("Homme") || sex.equals(("Femme")))
+            throw  new JsonElementException("Sexe inconnu");
+
+        this.sex = sex;
+    }
+
+    void setAge(Integer age) throws JsonElementException {
+        if (age == null)
+            throw new JsonElementException("Age non renseigné");
+        if (age < 0 || age > 200)
+            throw new JsonElementException("Age non valide (" + age + ")");
+
+        this.age = age;
+    }
+
+    void setHeight(Integer height) throws JsonElementException {
+        if (height == null)
+            throw new JsonElementException("Taille non renseignée");
+        if (height < 0 || height > 300)
+            throw new JsonElementException("Taille non valide (" + height + ")");
+
+        this.height = height;
+    }
+
+    void setWeight(Integer weight) throws JsonElementException {
+        if (weight == null)
+            throw new JsonElementException("Taille non renseignée");
+        if (weight < 0 || weight > 300)
+            throw new JsonElementException("Taille non valide (" + weight + ")");
+
+        this.weight = weight;
     }
 
     void setMaterials(String materials) throws JsonElementException {
@@ -66,10 +113,6 @@ public class Surgery extends JsonElement
         }
     }
 
-    public void setCompatibles(String compatibles) {
-        this.compatibles = compatibles;
-    }
-
     void setSpecific(String specificStr) {
         if (specificStr.equals(""))
             return;
@@ -84,30 +127,35 @@ public class Surgery extends JsonElement
         }
     }
 
-    public void setStory(String story) {
-        this.story = story;
-    }
-
     //</editor-fold>
 
     @Override
-    String toJson(int offset)
-    {
+    String toJson(int offset) {
         int i = 1;
 
         StringBuilder json = new StringBuilder();
         json.append(addTabs(offset)).append("{\n");
         json.append(addTabs(offset + 1)).append("\"id\": ").append(id).append(",\n");
         json.append(addTabs(offset + 1)).append("\"nom\": \"").append(name).append("\",\n");
+        json.append(addTabs(offset + 1)).append("\"prenom\": \"").append(firstname).append("\",\n");
+        json.append(addTabs(offset + 1)).append("\"sexe\": \"").append(sex).append("\",\n");
+        json.append(addTabs(offset + 1)).append("\"age\": ").append(age).append(",\n");
+        json.append(addTabs(offset + 1)).append("\"taille\": ").append(height).append(",\n");
+        json.append(addTabs(offset + 1)).append("\"poid\": ").append(weight).append(",\n");
         json.append(addTabs(offset + 1)).append("\"materiels\": [ ").append(materials).append(" ],\n");
-        json.append(addTabs(offset + 1)).append("\"reponses\": [\n");
-        for (Map.Entry<String, String> response : responses.entrySet())
+        json.append(addTabs(offset + 1)).append("\"responses\": [");
+        if (responses.size() >= 1)
         {
-            json.append(addTabs(offset + 2)).append("{ \"").append(response.getKey()).append("\": \"").append(response.getValue()).append("\" }").append(responses.size() == i ? "\n" : ",\n");
-            ++i;
+            i = 1;
+            json.append("\n");
+            for (Map.Entry<String, String> response : responses.entrySet())
+            {
+                json.append(addTabs(offset + 2)).append("{ \"").append(response.getKey()).append("\": \"").append(response.getValue()).append("\" }").append(responses.size() == i ? "\n" : ",\n");
+                ++i;
+            }
+            json.append(addTabs(offset + 1));
         }
-        json.append(addTabs(offset + 1)).append("],\n");
-        json.append(addTabs(offset + 1)).append("\"compatibles\": [").append(compatibles).append("],\n");
+        json.append("],\n");
         json.append(addTabs(offset + 1)).append("\"spec\": [");
         if (specific != null)
         {
@@ -119,7 +167,6 @@ public class Surgery extends JsonElement
             }
         }
         json.append("],\n");
-        json.append(addTabs(offset + 1)).append("\"histoire\": \"").append(story).append("\"\n");
         json.append(addTabs(offset)).append("}");
         return json.toString();
     }
