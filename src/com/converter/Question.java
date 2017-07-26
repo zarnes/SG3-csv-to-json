@@ -37,7 +37,7 @@ public class Question extends JsonElement
         json.append(addTabs(offset)).append("{\n");
         json.append(addTabs(offset + 1)).append("\"id\": \"").append(id).append("\",\n");
         json.append(addTabs(offset + 1)).append("\"question\": \"").append(question).append("\",\n");
-        json.append(addTabs(offset + 1)).append("\"reponse\": \"").append(response).append("\",\n");
+        json.append(addTabs(offset + 1)).append("\"reponse\": \"").append(response).append("\"\n");
         json.append(addTabs(offset)).append("}");
         return json.toString();
     }

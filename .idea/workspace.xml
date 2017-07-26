@@ -2,26 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c7e73bc-be28-4872-874a-525ba5895511" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Lebreton.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/converter/JsonElementException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/converter/Material.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/converter/Patient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/converter/Question.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame$7.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame$8.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/JsonElement.class" afterPath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/JsonElement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/JsonElementException.class" afterPath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/JsonElementException.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame$1.class" afterPath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame$ButtonType.class" afterPath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame$ButtonType.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame.class" afterPath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/Patient.class" afterPath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/Patient.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/Question.class" afterPath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/Question.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/Surgery.class" afterPath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/Surgery.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Lebreton.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Lebreton.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/converter/JsonElementException.java" afterPath="$PROJECT_DIR$/src/com/converter/JsonElementException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/converter/MainFrame.java" afterPath="$PROJECT_DIR$/src/com/converter/MainFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/converter/Patient.java" afterPath="$PROJECT_DIR$/src/com/converter/Patient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/converter/Question.java" afterPath="$PROJECT_DIR$/src/com/converter/Question.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/converter/Surgery.java" afterPath="$PROJECT_DIR$/src/com/converter/Surgery.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,14 +29,14 @@
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/converter/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="254" column="24" lean-forward="false" selection-start-line="254" selection-start-column="24" selection-end-line="254" selection-end-column="24" />
+            <state relative-caret-position="-129">
+              <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#ButtonType#0;class#MainFrame#0" expanded="false" />
-                <element signature="e#868#979#0" expanded="false" />
-                <element signature="e#1177#1302#0" expanded="false" />
-                <element signature="e#1447#1564#0" expanded="false" />
+                <element signature="e#459#495#0" expanded="false" />
+                <element signature="e#1353#1473#0" expanded="false" />
+                <element signature="e#2655#2713#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -54,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/converter/JsonElement.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+              <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -63,21 +55,8 @@
       <file leaf-file-name="JsonElementException.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/converter/JsonElementException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-              <folding>
-                <element signature="e#117#118#0" expanded="true" />
-                <element signature="e#206#207#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Question.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/converter/Question.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="95" lean-forward="false" selection-start-line="26" selection-start-column="95" selection-end-line="26" selection-end-column="95" />
+            <state relative-caret-position="119">
+              <caret line="7" column="49" lean-forward="false" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -86,14 +65,24 @@
       <file leaf-file-name="Surgery.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/converter/Surgery.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+            <state relative-caret-position="505">
+              <caret line="111" column="100" lean-forward="false" selection-start-line="111" selection-start-column="100" selection-end-line="111" selection-end-column="100" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2137#2138#0" expanded="true" />
-                <element signature="e#2183#2184#0" expanded="true" />
-                <element signature="e#2581#2582#0" expanded="true" />
-                <element signature="e#2615#2616#0" expanded="true" />
+                <element signature="e#333#375#0" expanded="false" />
+                <element signature="method#setResponses#0;class#Surgery#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Patient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/converter/Patient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,21 +91,19 @@
       <file leaf-file-name="Material.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/converter/Material.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="510">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Patient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/converter/Patient.java">
+      <file leaf-file-name="Question.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/converter/Question.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,11 +138,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/converter/Main.java" />
         <option value="$PROJECT_DIR$/src/com/converter/JsonElement.java" />
-        <option value="$PROJECT_DIR$/src/com/converter/Question.java" />
-        <option value="$PROJECT_DIR$/src/com/converter/Patient.java" />
         <option value="$PROJECT_DIR$/src/com/converter/Material.java" />
-        <option value="$PROJECT_DIR$/src/com/converter/JsonElementException.java" />
+        <option value="$PROJECT_DIR$/src/com/converter/Question.java" />
         <option value="$PROJECT_DIR$/src/com/converter/Surgery.java" />
+        <option value="$PROJECT_DIR$/src/com/converter/Patient.java" />
+        <option value="$PROJECT_DIR$/src/com/converter/JsonElementException.java" />
         <option value="$PROJECT_DIR$/src/com/converter/MainFrame.java" />
       </list>
     </option>
@@ -209,7 +196,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -233,8 +219,9 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,12 +299,13 @@
       <workItem from="1500910495257" duration="1551000" />
       <workItem from="1500969863121" duration="1768000" />
       <workItem from="1500971668222" duration="292000" />
-      <workItem from="1500971986535" duration="19801000" />
+      <workItem from="1500971986535" duration="20494000" />
+      <workItem from="1501055198051" duration="8193000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41845000" />
+    <option name="totallyTimeSpent" value="50731000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -332,13 +320,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -350,6 +337,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,19 +348,12 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/converter/MainFrame.java</url>
-          <line>251</line>
-          <properties />
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="39" />
+      <option name="time" value="45" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((Win32ShellFolder2) file).getDisplayName()" language="JAVA" custom="sun.awt.shell.Win32ShellFolder2" />
+        <watch expression="MainFrame.currentLine" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -384,9 +365,77 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#ButtonType#0;class#MainFrame#0" expanded="false" />
-            <element signature="e#868#979#0" expanded="false" />
-            <element signature="e#1177#1302#0" expanded="false" />
-            <element signature="e#1447#1564#0" expanded="false" />
+            <element signature="e#459#495#0" expanded="false" />
+            <element signature="e#1353#1473#0" expanded="false" />
+            <element signature="e#2655#2713#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/converter/JsonElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/converter/JsonElementException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/converter/Surgery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#333#375#0" expanded="false" />
+            <element signature="method#setResponses#0;class#Surgery#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/converter/Question.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="95" lean-forward="false" selection-start-line="26" selection-start-column="95" selection-end-line="26" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/converter/Material.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/converter/Patient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/converter/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#ButtonType#0;class#MainFrame#0" expanded="false" />
+            <element signature="e#459#495#0" expanded="false" />
+            <element signature="e#1353#1473#0" expanded="false" />
+            <element signature="e#2655#2713#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -405,10 +454,8 @@
           <caret line="112" column="4" lean-forward="false" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2183#2184#0" expanded="true" />
-            <element signature="e#2581#2582#0" expanded="true" />
-            <element signature="e#2615#2616#0" expanded="true" />
+            <element signature="e#333#375#0" expanded="false" />
+            <element signature="method#setResponses#0;class#Surgery#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -420,9 +467,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#ButtonType#0;class#MainFrame#0" expanded="false" />
-            <element signature="e#868#979#0" expanded="false" />
-            <element signature="e#1177#1302#0" expanded="false" />
-            <element signature="e#1447#1564#0" expanded="false" />
+            <element signature="e#459#495#0" expanded="false" />
+            <element signature="e#1353#1473#0" expanded="false" />
+            <element signature="e#2655#2713#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -441,10 +488,8 @@
           <caret line="112" column="4" lean-forward="false" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2183#2184#0" expanded="true" />
-            <element signature="e#2581#2582#0" expanded="true" />
-            <element signature="e#2615#2616#0" expanded="true" />
+            <element signature="e#333#375#0" expanded="false" />
+            <element signature="method#setResponses#0;class#Surgery#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -456,9 +501,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#ButtonType#0;class#MainFrame#0" expanded="false" />
-            <element signature="e#868#979#0" expanded="false" />
-            <element signature="e#1177#1302#0" expanded="false" />
-            <element signature="e#1447#1564#0" expanded="false" />
+            <element signature="e#459#495#0" expanded="false" />
+            <element signature="e#1353#1473#0" expanded="false" />
+            <element signature="e#2655#2713#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -477,10 +522,8 @@
           <caret line="131" column="18" lean-forward="true" selection-start-line="131" selection-start-column="18" selection-end-line="131" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2183#2184#0" expanded="true" />
-            <element signature="e#2581#2582#0" expanded="true" />
-            <element signature="e#2615#2616#0" expanded="true" />
+            <element signature="e#333#375#0" expanded="false" />
+            <element signature="method#setResponses#0;class#Surgery#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -492,9 +535,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#ButtonType#0;class#MainFrame#0" expanded="false" />
-            <element signature="e#868#979#0" expanded="false" />
-            <element signature="e#1177#1302#0" expanded="false" />
-            <element signature="e#1447#1564#0" expanded="false" />
+            <element signature="e#459#495#0" expanded="false" />
+            <element signature="e#1353#1473#0" expanded="false" />
+            <element signature="e#2655#2713#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -513,10 +556,8 @@
           <caret line="111" column="20" lean-forward="false" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2183#2184#0" expanded="true" />
-            <element signature="e#2581#2582#0" expanded="true" />
-            <element signature="e#2615#2616#0" expanded="true" />
+            <element signature="e#333#375#0" expanded="false" />
+            <element signature="method#setResponses#0;class#Surgery#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -528,9 +569,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#ButtonType#0;class#MainFrame#0" expanded="false" />
-            <element signature="e#868#979#0" expanded="false" />
-            <element signature="e#1177#1302#0" expanded="false" />
-            <element signature="e#1447#1564#0" expanded="false" />
+            <element signature="e#459#495#0" expanded="false" />
+            <element signature="e#1353#1473#0" expanded="false" />
+            <element signature="e#2655#2713#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -549,10 +590,8 @@
           <caret line="111" column="20" lean-forward="false" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2183#2184#0" expanded="true" />
-            <element signature="e#2581#2582#0" expanded="true" />
-            <element signature="e#2615#2616#0" expanded="true" />
+            <element signature="e#333#375#0" expanded="false" />
+            <element signature="method#setResponses#0;class#Surgery#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -595,14 +634,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/converter/MainFrameForm.jfd" />
     <entry file="file://$PROJECT_DIR$/src/com/converter/MainFrameForm.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/converter/TestLayout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/converter/TestLayout.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_141/src.zip!/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -616,59 +648,46 @@
         <state relative-caret-position="136">
           <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding>
-            <element signature="e#110#111#0" expanded="true" />
-            <element signature="e#141#142#0" expanded="true" />
+            <element signature="e#110#111#0" expanded="false" />
+            <element signature="e#141#142#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/converter/Material.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/converter/Question.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="95" lean-forward="false" selection-start-line="26" selection-start-column="95" selection-end-line="26" selection-end-column="95" />
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/converter/Patient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/converter/JsonElementException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-          <folding>
-            <element signature="e#117#118#0" expanded="true" />
-            <element signature="e#206#207#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/converter/Surgery.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+        <state relative-caret-position="505">
+          <caret line="111" column="100" lean-forward="false" selection-start-line="111" selection-start-column="100" selection-end-line="111" selection-end-column="100" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-            <element signature="e#2183#2184#0" expanded="true" />
-            <element signature="e#2581#2582#0" expanded="true" />
-            <element signature="e#2615#2616#0" expanded="true" />
+            <element signature="e#333#375#0" expanded="false" />
+            <element signature="method#setResponses#0;class#Surgery#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/converter/Patient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -676,21 +695,29 @@
     <entry file="file://$PROJECT_DIR$/src/com/converter/JsonElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/converter/JsonElementException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="49" lean-forward="false" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/converter/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="254" column="24" lean-forward="false" selection-start-line="254" selection-start-column="24" selection-end-line="254" selection-end-column="24" />
+        <state relative-caret-position="-129">
+          <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#ButtonType#0;class#MainFrame#0" expanded="false" />
-            <element signature="e#868#979#0" expanded="false" />
-            <element signature="e#1177#1302#0" expanded="false" />
-            <element signature="e#1447#1564#0" expanded="false" />
+            <element signature="e#459#495#0" expanded="false" />
+            <element signature="e#1353#1473#0" expanded="false" />
+            <element signature="e#2655#2713#0" expanded="false" />
           </folding>
         </state>
       </provider>

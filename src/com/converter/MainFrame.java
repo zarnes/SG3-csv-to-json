@@ -18,15 +18,11 @@ class MainFrame extends JFrame {
     }
 
     private String encoding = "UTF-8";
-    static JTextArea log;
+    static JTextArea log = new JTextArea();
     static int currentLine;
 
     MainFrame()
     {
-        // General setup
-        setSize(400, 300);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
         //<editor-fold desc="Menu Creation">
 
         JMenuBar bar = new JMenuBar();
@@ -34,12 +30,12 @@ class MainFrame extends JFrame {
         ButtonGroup group = new ButtonGroup();
 
         JRadioButtonMenuItem button = new JRadioButtonMenuItem("UTF-8");
-        button.doClick();
         button.addActionListener(e -> {
             encoding = "UTF-8";
-            log.append("Encodage des csv configuré en UTF-8");
+            log.append("Encodage des csv configuré en UTF-8.\n");
         });
         group.add(button);
+        button.doClick();
         menu.add(button);
 
         button = new JRadioButtonMenuItem("Win-1252");
@@ -47,7 +43,7 @@ class MainFrame extends JFrame {
         menu.add(button);
         button.addActionListener(e -> {
             encoding = "Windows-1252";
-            log.append("Encodage des csv configuré en Windows-1252");
+            log.append("Encodage des csv configuré en Windows-1252.\n");
         });
 
         button = new JRadioButtonMenuItem("MacRoman");
@@ -55,7 +51,7 @@ class MainFrame extends JFrame {
         menu.add(button);
         button.addActionListener(e -> {
             encoding = "MacRoman";
-            log.append("Encodage des csv configuré en MacRoman");
+            log.append("Encodage des csv configuré en MacRoman.\n");
         });
 
         bar.add(menu);
@@ -92,11 +88,10 @@ class MainFrame extends JFrame {
         c.gridwidth = 4;
         c.gridx = 0;
         c.gridy = 1;
-        c.ipady = 0;
         c.fill = GridBagConstraints.BOTH;
 
-        log = new JTextArea();
         log.setEditable(false);
+        log.setLineWrap(true);
         JScrollPane scroll = new JScrollPane(log);
         scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -116,22 +111,57 @@ class MainFrame extends JFrame {
 
         //</editor-fold>
 
+        // General setup
+        setSize(370, 200);
+        setMinimumSize(new Dimension(370, 200));
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
+
+        if (LoadCsv(ButtonType.surgeries))
+            if (LoadCsv(ButtonType.patients))
+                if (LoadCsv(ButtonType.materials))
+                    LoadCsv(ButtonType.questions);
     }
 
     private boolean LoadCsv(ButtonType button)
     {
-        // TODO mieux verboser les log
         File file;
         JFileChooser fc = new JFileChooser();
-        int returnVal = fc.showOpenDialog(this);
+
+        switch (button)
+        {
+            case surgeries:
+                log.append("Sélection du fichier csv des chirurgies\n");
+                break;
+            case patients:
+                log.append("Sélection du fichier csv des patients\n");
+                break;
+            case materials:
+                log.append("Sélection du fichier csv du matériel\n");
+                break;
+            case questions:
+                log.append("Sélection du fichier csv des questions\n");
+                break;
+            default:
+                return false;
+        }
+
+        log.setCaretPosition(log.getDocument().getLength());
+
+        int returnVal = fc.showOpenDialog(null);
 
         if (returnVal == JFileChooser.APPROVE_OPTION)
             file = fc.getSelectedFile();
-        else
+        else {
+            log.append("Fichier non chargé\n");
+            log.setCaretPosition(log.getDocument().getLength());
             return false;
+        }
+
 
         try {
+            log.append("Lecture du fichier " + file.getName() + "\n");
+            log.setCaretPosition(log.getDocument().getLength());
             CSVReader reader = new CSVReader(new InputStreamReader(new FileInputStream(file), encoding), ';', '"', 1);
 
             ArrayList<JsonElement> elements = new ArrayList<>();
@@ -141,10 +171,13 @@ class MainFrame extends JFrame {
             StringBuilder jsonOutput = new StringBuilder("{\n");
             currentLine = 2;
 
+            //<editor-fold desc="Lecture du fichier">
+
             // Switch loops fetch data from csv files
             switch (button) {
                 case surgeries:
-                    while ((CSVline = reader.readNext()) != null) {
+                    while ((CSVline = CheckLine(reader)) != null)
+                    {
                         Surgery surgery = new Surgery();
                         surgery.setId(CSVline[0].equals("") ? null : Integer.parseInt(CSVline[0]));
                         surgery.setName(CSVline[1]);
@@ -154,7 +187,7 @@ class MainFrame extends JFrame {
                         surgery.setSpecific(CSVline[5]);
                         surgery.setStory(CSVline[6]);
                         elements.add(surgery);
-//TODO a toast
+
                         hashID.add(CSVline[0]);
                         if (hashID.size() < elements.size())
                             throw new JsonElementException("L'identifiant " + CSVline[0] + " existe déjà");
@@ -169,7 +202,8 @@ class MainFrame extends JFrame {
                     break;
 
                 case patients:
-                    while ((CSVline = reader.readNext()) != null) {
+                    while ((CSVline = CheckLine(reader)) != null)
+                    {
                         Patient patient = new Patient();
                         patient.setId(CSVline[0].equals("") ? null : Integer.parseInt(CSVline[0]));
                         patient.setName(CSVline[1]);
@@ -189,11 +223,12 @@ class MainFrame extends JFrame {
 
                         ++currentLine;
                     }
-                    jsonOutput.append("\t\"materiels\": [\n\n");
+                    jsonOutput.append("\t\"patients\": [\n\n");
                     break;
 
                 case materials:
-                    while ((CSVline = reader.readNext()) != null) {
+                    while ((CSVline = CheckLine(reader)) != null)
+                    {
                         Material material = new Material();
                         material.setId(CSVline[0].equals("") ? null : Integer.parseInt(CSVline[0]));
                         material.setMaterial(CSVline[1]);
@@ -214,7 +249,8 @@ class MainFrame extends JFrame {
                     break;
 
                 case questions:
-                    while ((CSVline = reader.readNext()) != null) {
+                    while ((CSVline = CheckLine(reader)) != null)
+                    {
                         Question question = new Question();
                         question.setId(CSVline[0]);
                         question.setQuestion(CSVline[1]);
@@ -238,9 +274,14 @@ class MainFrame extends JFrame {
                     return false;
             }
 
+            //</editor-fold>
+
             // Build the json
+            log.append("Génération du json");
+            log.setCaretPosition(log.getDocument().getLength());
             for (int i = 0; i < elements.size(); ++i)
             {
+                log.append(".");
                 jsonOutput.append(elements.get(i).toJson(2));
                 if (i < elements.size()-1)
                     jsonOutput.append(",\n\n");
@@ -252,11 +293,38 @@ class MainFrame extends JFrame {
             PrintWriter writer = new PrintWriter(file.getParent() + "/" + file.getName().split("csv")[0] + "json", "UTF-8");
             writer.print(jsonOutput);
             writer.close();
-            log.append("Fichier Json crée\n");
+            log.append("\nFichier Json créé\n");
+            log.setCaretPosition(log.getDocument().getLength());
 
+        } catch (JsonElementException e) {
+            return false;
+        } catch (FileNotFoundException | UnsupportedEncodingException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    private String[] CheckLine(CSVReader reader)
+    {
+        String[] CSVline = new String[0];
+        try {
+            CSVline = reader.readNext();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (JsonElementException e) {}
-        return false;
+        }
+
+        if (CSVline == null)
+        {
+            return null;
+        }
+
+        for (String data : CSVline)
+        {
+            if (!data.equals(""))
+                return CSVline;
+        }
+
+        return null;
     }
 }

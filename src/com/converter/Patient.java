@@ -46,7 +46,7 @@ public class Patient extends JsonElement
         if (sex.equals(""))
             throw new JsonElementException("Sexe non renseigné");
 
-        if (sex.equals("Homme") || sex.equals(("Femme")))
+        if (!sex.equals("Homme") && !sex.equals(("Femme")))
             throw  new JsonElementException("Sexe inconnu");
 
         this.sex = sex;
@@ -166,7 +166,7 @@ public class Patient extends JsonElement
                 ++i;
             }
         }
-        json.append("],\n");
+        json.append("]\n");
         json.append(addTabs(offset)).append("}");
         return json.toString();
     }
