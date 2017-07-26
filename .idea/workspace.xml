@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c7e73bc-be28-4872-874a-525ba5895511" name="Default" comment="" />
+    <list default="true" id="6c7e73bc-be28-4872-874a-525ba5895511" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/JsonElementException.class" afterPath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/JsonElementException.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame$1.class" afterPath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame.class" afterPath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/MainFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/Patient.class" afterPath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/Patient.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/Question.class" afterPath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/Question.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/Surgery.class" afterPath="$PROJECT_DIR$/out/production/Convertisseur csv à json SG3/com/converter/Surgery.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Lebreton.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Lebreton.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/converter/JsonElementException.java" afterPath="$PROJECT_DIR$/src/com/converter/JsonElementException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/converter/MainFrame.java" afterPath="$PROJECT_DIR$/src/com/converter/MainFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/converter/Patient.java" afterPath="$PROJECT_DIR$/src/com/converter/Patient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/converter/Question.java" afterPath="$PROJECT_DIR$/src/com/converter/Question.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/converter/Surgery.java" afterPath="$PROJECT_DIR$/src/com/converter/Surgery.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/converter/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-129">
-              <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+              <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#ButtonType#0;class#MainFrame#0" expanded="false" />
@@ -28,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JsonElement.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JsonElement.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/converter/JsonElement.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
@@ -66,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/converter/Patient.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/converter/Question.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -286,12 +300,12 @@
       <workItem from="1500969863121" duration="1768000" />
       <workItem from="1500971668222" duration="292000" />
       <workItem from="1500971986535" duration="20494000" />
-      <workItem from="1501055198051" duration="8314000" />
+      <workItem from="1501055198051" duration="8193000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50852000" />
+    <option name="totallyTimeSpent" value="50731000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -651,7 +665,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/converter/Question.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -671,10 +685,18 @@
     <entry file="file://$PROJECT_DIR$/src/com/converter/Patient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/converter/JsonElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -689,7 +711,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/converter/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-129">
-          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#ButtonType#0;class#MainFrame#0" expanded="false" />
@@ -697,14 +719,6 @@
             <element signature="e#1353#1473#0" expanded="false" />
             <element signature="e#2655#2713#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/converter/JsonElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
