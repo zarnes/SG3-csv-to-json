@@ -103,7 +103,7 @@ public class Surgery extends JsonElement
         json.append(addTabs(offset + 1)).append("\"reponses\": [");
         for (Map.Entry<String, String> response : responses.entrySet())
         {
-            json.append("\n").append(addTabs(offset + 2)).append("{ \"").append(response.getKey()).append("\": \"").append(response.getValue()).append("\" }").append(responses.size() == i ? "\n" : ",\n");
+            json.append("\n").append(addTabs(offset + 2)).append("{ \"").append(response.getKey()).append("\": \"").append(response.getValue()).append("\" }").append(responses.size() == i ? "\n" : ",");
             ++i;
         }
         if (responses.size() >= 1)

@@ -55,6 +55,19 @@ class MainFrame extends JFrame {
         });
 
         bar.add(menu);
+
+
+        menu = new JMenu("Actions rapides");
+        JMenuItem button2 = new JMenuItem("Générer tout les json");
+        menu.add(button2);
+        button2.addActionListener(e -> {
+            if (LoadCsv(ButtonType.surgeries))
+                if (LoadCsv(ButtonType.patients))
+                    if (LoadCsv(ButtonType.materials))
+                        LoadCsv(ButtonType.questions);
+        });
+
+        bar.add(menu);
         setJMenuBar(bar);
 
         //</editor-fold>
@@ -116,11 +129,6 @@ class MainFrame extends JFrame {
         setMinimumSize(new Dimension(370, 200));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
-
-        if (LoadCsv(ButtonType.surgeries))
-            if (LoadCsv(ButtonType.patients))
-                if (LoadCsv(ButtonType.materials))
-                    LoadCsv(ButtonType.questions);
     }
 
     private boolean LoadCsv(ButtonType button)
@@ -158,6 +166,12 @@ class MainFrame extends JFrame {
             return false;
         }
 
+        String[] fileSplitted = file.getName().split(".");
+        if (!fileSplitted[fileSplitted.length-1].equals("csv"))
+        {
+            log.append("Le fichier selectionné n'est pas un fichier csv.\n");
+            return false;
+        }
 
         try {
             log.append("Lecture du fichier " + file.getName() + "\n");
@@ -176,7 +190,7 @@ class MainFrame extends JFrame {
             // Switch loops fetch data from csv files
             switch (button) {
                 case surgeries:
-                    while ((CSVline = CheckLine(reader)) != null)
+                    while ((CSVline = CheckLine(reader, 7)) != null)
                     {
                         Surgery surgery = new Surgery();
                         surgery.setId(CSVline[0].equals("") ? null : Integer.parseInt(CSVline[0]));
@@ -202,7 +216,7 @@ class MainFrame extends JFrame {
                     break;
 
                 case patients:
-                    while ((CSVline = CheckLine(reader)) != null)
+                    while ((CSVline = CheckLine(reader, 10)) != null)
                     {
                         Patient patient = new Patient();
                         patient.setId(CSVline[0].equals("") ? null : Integer.parseInt(CSVline[0]));
@@ -227,7 +241,7 @@ class MainFrame extends JFrame {
                     break;
 
                 case materials:
-                    while ((CSVline = CheckLine(reader)) != null)
+                    while ((CSVline = CheckLine(reader, 3)) != null)
                     {
                         Material material = new Material();
                         material.setId(CSVline[0].equals("") ? null : Integer.parseInt(CSVline[0]));
@@ -249,21 +263,21 @@ class MainFrame extends JFrame {
                     break;
 
                 case questions:
-                    while ((CSVline = CheckLine(reader)) != null)
+                    while ((CSVline = CheckLine(reader, 4)) != null)
                     {
                         Question question = new Question();
-                        question.setId(CSVline[0]);
-                        question.setQuestion(CSVline[1]);
-                        question.setResponse(CSVline[2]);
+                        question.setId(CSVline[1]);
+                        question.setQuestion(CSVline[2]);
+                        question.setResponse(CSVline[3]);
                         elements.add(question);
 
-                        hashID.add(CSVline[0]);
+                        hashID.add(CSVline[1]);
                         if (hashID.size() < elements.size())
-                            throw new JsonElementException("L'identifiant " + CSVline[0] + " existe déjà");
+                            throw new JsonElementException("L'identifiant " + CSVline[1] + " existe déjà");
 
-                        hashID2.add(CSVline[1]);
+                        hashID2.add(CSVline[2]);
                         if (hashID2.size() < elements.size())
-                            throw new JsonElementException("La question " + CSVline[1] + " existe déjà");
+                            throw new JsonElementException("La question " + CSVline[2] + " existe déjà");
 
                         ++currentLine;
                     }
@@ -305,7 +319,7 @@ class MainFrame extends JFrame {
         return true;
     }
 
-    private String[] CheckLine(CSVReader reader)
+    private String[] CheckLine(CSVReader reader, int length)
     {
         String[] CSVline = new String[0];
         try {
@@ -318,6 +332,9 @@ class MainFrame extends JFrame {
         {
             return null;
         }
+
+        if (CSVline.length != length)
+            return null;
 
         for (String data : CSVline)
         {

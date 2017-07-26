@@ -143,7 +143,7 @@ public class Patient extends JsonElement
         json.append(addTabs(offset + 1)).append("\"taille\": ").append(height).append(",\n");
         json.append(addTabs(offset + 1)).append("\"poid\": ").append(weight).append(",\n");
         json.append(addTabs(offset + 1)).append("\"materiels\": [ ").append(materials).append(" ],\n");
-        json.append(addTabs(offset + 1)).append("\"responses\": [");
+        json.append(addTabs(offset + 1)).append("\"reponses\": [");
         if (responses.size() >= 1)
         {
             i = 1;
