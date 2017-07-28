@@ -166,7 +166,7 @@ class MainFrame extends JFrame {
             return false;
         }
 
-        String[] fileSplitted = file.getName().split(".");
+        String[] fileSplitted = file.getName().split("\\.");
         if (!fileSplitted[fileSplitted.length-1].equals("csv"))
         {
             log.append("Le fichier selectionné n'est pas un fichier csv.\n");
@@ -266,16 +266,16 @@ class MainFrame extends JFrame {
                     while ((CSVline = CheckLine(reader, 4)) != null)
                     {
                         Question question = new Question();
-                        question.setId(CSVline[1]);
-                        question.setQuestion(CSVline[2]);
-                        question.setResponse(CSVline[3]);
+                        question.setId(CSVline[0]);
+                        question.setQuestion(CSVline[1]);
+                        question.setResponse(CSVline[2]);
                         elements.add(question);
 
-                        hashID.add(CSVline[1]);
+                        hashID.add(CSVline[0]);
                         if (hashID.size() < elements.size())
                             throw new JsonElementException("L'identifiant " + CSVline[1] + " existe déjà");
 
-                        hashID2.add(CSVline[2]);
+                        hashID2.add(CSVline[1]);
                         if (hashID2.size() < elements.size())
                             throw new JsonElementException("La question " + CSVline[2] + " existe déjà");
 
@@ -333,8 +333,8 @@ class MainFrame extends JFrame {
             return null;
         }
 
-        if (CSVline.length != length)
-            return null;
+        /*if (CSVline.length != length)
+            return null;*/
 
         for (String data : CSVline)
         {
