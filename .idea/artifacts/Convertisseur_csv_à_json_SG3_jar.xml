@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Convertisseur csv à json SG3:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Convertisseur_csv_à_json_SG3_jar</output-path>
+    <root id="archive" name="Convertisseur csv à json SG3.jar">
+      <element id="module-output" name="Convertisseur csv à json SG3" />
+      <element id="extracted-dir" path="C:/Program Files/Java/jre1.8.0_141/lib/downloaded/opencsv-3.10.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
